@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f3f6f1;
+  --foreground: #17211c;
+  --card: #ffffff;
+  --card-foreground: #17211c;
+  --muted: #5d6b63;
+  --border: #dce5dc;
+  --accent: #1f7a4d;
+  --accent-foreground: #f4fff8;
+  --sidebar: #14332c;
+  --sidebar-foreground: #e7f3ec;
+  --danger: #b42318;
+  --warning: #b54708;
+  --ring: #1f7a4d;
+}
+
+.dark {
+  --background: #101714;
+  --foreground: #e8f2eb;
+  --card: #18211c;
+  --card-foreground: #e8f2eb;
+  --muted: #a8b7ae;
+  --border: #2c3b33;
+  --accent: #3dbe7a;
+  --accent-foreground: #062216;
+  --sidebar: #0c1c18;
+  --sidebar-foreground: #e7f3ec;
+  --danger: #ff8d84;
+  --warning: #fdb022;
+  --ring: #3dbe7a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}
+
+dialog {
+  margin: auto;
+  width: min(34rem, calc(100vw - 2rem));
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 0;
+  background: var(--card);
+  color: var(--foreground);
+  box-shadow: 0 24px 80px rgb(16 32 24 / 18%);
+}
+
+dialog::backdrop {
+  background: rgb(12 28 22 / 48%);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
